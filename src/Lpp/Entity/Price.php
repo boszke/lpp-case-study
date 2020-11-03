@@ -14,21 +14,21 @@ class Price
      * 
      * @var string
      */
-    public $description;
+    private $description;
 
     /**
      * Price in euro
      * 
      * @var int
      */
-    public $priceInEuro;
+    private $priceInEuro;
 
     /**
      * Warehouse's arrival date (to)
      *
      * @var \DateTime
      */
-    public $arrivalDate;
+    private $arrivalDate;
 
     /**
      * Due to date,
@@ -36,5 +36,51 @@ class Price
      *
      * @var \DateTime
      */
-    public $dueDate;
+    private $dueDate;
+
+    /**
+     * @param string $description
+     * @param int $priceInEuro
+     * @param \DateTime $arrivalDate
+     * @param \DateTime $dueDate
+     */
+    public function __construct($description, $priceInEuro, \DateTime $arrivalDate, \DateTime $dueDate)
+    {
+        $this->description = $description;
+        $this->priceInEuro = $priceInEuro;
+        $this->arrivalDate = $arrivalDate;
+        $this->dueDate = $dueDate;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPriceInEuro()
+    {
+        return $this->priceInEuro;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getArrivalDate()
+    {
+        return $this->arrivalDate;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDueDate()
+    {
+        return $this->dueDate;
+    }
 }

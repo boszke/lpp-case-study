@@ -2,6 +2,8 @@
 
 namespace Lpp\Entity;
 
+use Lpp\Entity\ValueObject\Url;
+
 /**
  * Represents a single item from a search result.
  * 
@@ -13,14 +15,14 @@ class Item
      *
      * @var string
      */
-    public $name;
+    private $name;
 
     /**
      * Url of the item's page
      * 
      * @var string
      */
-    public $url;
+    private $url;
 
     /**
      * Unsorted list of prices received from the 
@@ -28,5 +30,41 @@ class Item
      * 
      * @var Price[]
      */
-    public $prices = [];
+    private $prices = [];
+
+    /**
+     * @param string $name
+     * @param Url $url
+     * @param Price ...$prices
+     */
+    public function __construct($name, Url $url, Price ...$prices)
+    {
+        $this->name = $name;
+        $this->url = $url;
+        $this->prices = $prices;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * @return Price[]
+     */
+    public function getPrices()
+    {
+        return $this->prices;
+    }
 }

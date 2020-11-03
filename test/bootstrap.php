@@ -1,5 +1,2 @@
 <?php
-require __DIR__  . '/../src/SplClassLoader.php';
-
-$oClassLoader = new \SplClassLoader('Lpp', __DIR__ . '/../src');
-$oClassLoader->register();
+require_once __DIR__ . '/../vendor/autoload.php';
