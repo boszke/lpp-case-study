@@ -1,10 +1,8 @@
 <?php
 
-namespace Lpp\Test\Lpp\Enitity\ValueObject;
+namespace Lpp\Test\Lpp\Services;
 
-use Lpp\Entity\ValueObject\JsonFile;
 use Lpp\Entity\ValueObject\Url;
-use Lpp\Factory\FileReaderFactory;
 use Lpp\Service\FileReaderInterface;
 use Lpp\Service\ItemService;
 use PHPUnit\Framework\TestCase;
